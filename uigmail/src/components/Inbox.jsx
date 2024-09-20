@@ -27,7 +27,7 @@ const Inbox = ({sidebarOpen,setSidebarOpen}) => {
     const [selected, setSelected] = useState(0);
     return (
         <>
-        <div className={`${sidebarOpen ? "  " : " ml-64 "}  w-full flex-1 bg-white rounded-xl mx-5' `} >
+        <div className={`${sidebarOpen ? " ml-64 " : "  "}  w-full flex-1 bg-white rounded-xl mx-5' `} >
             <div className='flex items-center justify-between px-4 my-2'>
                 <div className='flex items-center gap-2'>
                     <div className='flex items-center gap-1'>

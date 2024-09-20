@@ -4,12 +4,16 @@ import connectDB from "./db/connectDB.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
 import userRoute from "./routes/user.route.js";
 import emailRoute from "./routes/email.route.js";
 
 dotenv.config({});
 connectDB();
-const PORT = 8080;
+const PORT =  process.env.PORT || 8080;
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename);
+
 const app = express();
 
 // middleware
@@ -27,9 +31,11 @@ app.use(cors(corsOptions));
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/email", emailRoute);
 
+// use the uigmail app
+app.use(express.static(path.join(__dirname,'/uigmail/dist')));
+
 app.get("/",(req,res)=>{
-    app.use(express.static(path.resolve(__dirname,"uigmail","build")));
-    res.sendFile(path.resolve(__dirname,"uigmail","build","index.html"));
+    res.sendFile(path.join(__dirname,'/uigmail/dist/index.html'));
 })
 
 app.listen(PORT, ()=>{

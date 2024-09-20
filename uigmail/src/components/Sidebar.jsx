@@ -36,7 +36,7 @@ const sidebarItems = [
 const Sidebar = ({sidebarOpen}) => {
     const dispatch = useDispatch();
     return (
-        <div className={`${sidebarOpen? " hidden " : " block "}  w-[15%] fixed h-full`}>
+        <div className={`${sidebarOpen? " block " : " hidden "}  w-[15%] fixed h-full`}>
             <div className='p-3'>
                 <button onClick={()=> dispatch(setOpen(true))} className='flex items-center gap-2 bg-[#C2E7FF] p-4 rounded-2xl hover:shadow-md'>
                     <LuPencil size="24px" />

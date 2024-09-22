@@ -33,10 +33,10 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/email", emailRoute);
 
 // use the uigmail app
-app.use(express.static(path.join(__dirname,'/uigmail/dist')));
+app.use(express.static(path.join(__dirname,'//uigmail//dist')));
 
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,'/uigmail/dist/index.html'));
+    res.sendFile(path.join(__dirname,'//uigmail//dist//index.html'));
 })
 
 app.listen(PORT, ()=>{

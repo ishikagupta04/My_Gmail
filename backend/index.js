@@ -9,7 +9,7 @@ import emailRoute from "./routes/email.route.js";
 dotenv.config({});
 connectDB();
 
-const PORT =  8080;
+const PORT = 9000;
 const app = express();
 
 // middleware
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin:'https://earnest-elf-aaaddc.netlify.app',
+    origin:'https://mernstack-gmailclone-main.onrender.com',
     credentials:true
 }
 app.use(cors(corsOptions));

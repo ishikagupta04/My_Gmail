@@ -21,7 +21,7 @@ const SendEmail = () => {
     const submitHandler = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`${window.location.origin}/api/v1/email/create`, formData, {
+            const res = await axios.post("http://localhost:9000/api/v1/email/create", formData, {
                 headers:{
                     'Content-Type':"application/json"
                 },

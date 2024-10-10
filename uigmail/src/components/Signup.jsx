@@ -19,7 +19,7 @@ const Signup = () => {
     const submitHandler = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`${window.location.origin}/api/v1/user/register`, input, {
+            const res = await axios.post("http://localhost:9000/api/v1/user/register", input, {
                 headers:{
                     'Content-Type':"application/json"
                 },

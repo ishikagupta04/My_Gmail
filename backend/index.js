@@ -9,7 +9,7 @@ import emailRoute from "./routes/email.route.js";
 dotenv.config({});
 connectDB();
 
-const PORT = 9000;
+const PORT = process.env.PORT || 9000;
 const app = express();
 
 // middleware
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin:'http://localhost:5173',
+    origin: process.env.FRONTEND,
     credentials:true
 }
 app.use(cors(corsOptions));
